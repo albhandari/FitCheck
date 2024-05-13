@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct FitCheckApp: App {
+    var myWorkoutsViewModel = MyWorkoutsViewModel()
     var body: some Scene {
         WindowGroup {
-            ChatBotView()
+            ContentView()
+                .environmentObject(myWorkoutsViewModel)
         }
     }
 }

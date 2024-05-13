@@ -1,5 +1,5 @@
 //
-//  WorkoutDetailView.swift
+//  MyWorkoutListView.swift
 //  FitCheck
 //
 //  Created by Alex Bhandari on 5/13/24.
@@ -7,8 +7,51 @@
 
 import SwiftUI
 
-struct WorkoutDetailView: View {
+struct MyWorkoutListView: View {
+    
     @EnvironmentObject var myWorkoutsVM: MyWorkoutsViewModel
+    
+    var body: some View {
+        
+        NavigationSplitView {
+            List(myWorkoutsVM.myWorkouts, id: \.workoutTitle) { myWorkout in
+                NavigationLink {
+                    MyWorkoutDetailView(workoutModel: myWorkout)
+                } label: {
+                    WorkoutRowView(workout: myWorkout)
+                }
+            }
+            
+            
+        } detail: {
+            Text("Select a Workout")
+        }
+        
+    }
+}
+
+
+
+struct WorkoutRowView: View {
+    var workout: WorkoutModel
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 5) {
+            Text(workout.workoutTitle)
+                .font(.headline)
+                .fontWeight(.bold)
+            
+            Text(workout.message)
+                .font(.subheadline)
+                .lineLimit(2)
+                .truncationMode(.tail)
+                .foregroundColor(.secondary)
+        }
+        .padding()
+    }
+}
+
+struct MyWorkoutDetailView: View {
     var workoutModel: WorkoutModel?
     
     var body: some View {
@@ -69,30 +112,9 @@ struct WorkoutDetailView: View {
             .frame(minWidth: 0, maxWidth: .infinity)
             
         }
-        Button("Add to my Workouts") {
-            if let workout = workoutModel {
-                myWorkoutsVM.addWorkout(workout)
-            }
-            // Define the action here
-        }
-        .padding()
-        .frame(minWidth: 0, maxWidth: .infinity)
-        .background(Color.blue)
-        .foregroundColor(Color.white)
-        .cornerRadius(12)
-        .padding([.leading, .trailing, .bottom], 20)
     }
 }
 
 #Preview {
-    WorkoutDetailView(workoutModel: WorkoutModel(message: "Your Weekly Fitness Plan",workoutTitle: "Grind Week", workoutSchedule: [
-                WorkoutSchedule(day: "Monday", workoutDescription: "Leg Day", workout: [
-                    Workout(exerciseName: "Squat", exerciseDescription: "Perform back squats.", exerciseSets: "3", exerciseReps: "12"),
-                    Workout(exerciseName: "Leg Press", exerciseDescription: "Use the leg press machine.", exerciseSets: "3", exerciseReps: "10")
-                ]),
-                WorkoutSchedule(day: "Wednesday", workoutDescription: "Upper Body Day", workout: [
-                    Workout(exerciseName: "Bench Press", exerciseDescription: "Flat bench press.", exerciseSets: "3", exerciseReps: "10"),
-                    Workout(exerciseName: "Pull Ups", exerciseDescription: "Do wide grip pull ups.", exerciseSets: "2", exerciseReps: "8")
-                ])
-            ]))
+    MyWorkoutListView()
 }

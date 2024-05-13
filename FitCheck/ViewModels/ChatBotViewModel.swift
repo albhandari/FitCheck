@@ -30,7 +30,7 @@ class ChatBotViewModel: ObservableObject{
     func sendMessage(message: String) async{
         
         let jsonScript = """
-        {"message":"Your intro response","workout_schedule":[{"day":"Day of the week","workout_description":"Workout Description","workout":[{"exercise_name":"Exercise Name","exercise_description":"Exercise Description","exercise_sets":"type string","exercise_reps":"type string"}]}]}
+        {"message":"Your intro response","workout_title":"Title of the workout","workout_schedule":[{"day":"Day of the week","workout_description":"Workout Description","workout":[{"exercise_name":"Exercise Name","exercise_description":"Exercise Description","exercise_sets":"type string","exercise_reps":"type string"}]}]}
         """
         
         let fullMessage = isWorkoutRequest ? "\(message). Respond to my request, strictly in this json format: \(jsonScript)" : message

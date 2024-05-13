@@ -10,10 +10,12 @@ import Foundation
 // MARK: - Welcome
 struct WorkoutModel: Codable {
     let message: String
+    let workoutTitle: String
     let workoutSchedule: [WorkoutSchedule]
 
     enum CodingKeys: String, CodingKey {
         case message
+        case workoutTitle = "workout_title"
         case workoutSchedule = "workout_schedule"
     }
 }
