@@ -14,11 +14,11 @@ struct ChatResponse: Codable{
     let model: String
     let choices: [Choice]
     let usage: Usage
-    let systemFingerprint: String
+    //let systemFingerprint: String
     
     enum CodingKeys: String, CodingKey {
         case id, object, created, model, choices, usage
-        case systemFingerprint = "system_fingerprint"
+        //case systemFingerprint = "system_fingerprint"
     }
     
 }

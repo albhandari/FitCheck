@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF0354322BF203150096509A /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0354312BF203150096509A /* WorkoutModel.swift */; };
+		CF0354342BF2076A0096509A /* WorkoutDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0354332BF2076A0096509A /* WorkoutDetailView.swift */; };
 		CF0833952BB776CD00380813 /* FitCheckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0833942BB776CD00380813 /* FitCheckApp.swift */; };
 		CF0833972BB776CD00380813 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0833962BB776CD00380813 /* ContentView.swift */; };
 		CF0833992BB776CF00380813 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF0833982BB776CF00380813 /* Assets.xcassets */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CF0354312BF203150096509A /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
+		CF0354332BF2076A0096509A /* WorkoutDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailView.swift; sourceTree = "<group>"; };
 		CF0833912BB776CC00380813 /* FitCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF0833942BB776CD00380813 /* FitCheckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitCheckApp.swift; sourceTree = "<group>"; };
 		CF0833962BB776CD00380813 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 				CF0833962BB776CD00380813 /* ContentView.swift */,
 				CFBECAF32BB7C1590039139D /* ChatBotView.swift */,
 				CFB11EDF2BC33D500068E26B /* HomePageView.swift */,
+				CF0354332BF2076A0096509A /* WorkoutDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				CF96E43A2BB7D2AA00F63E04 /* ChatResponseModel.swift */,
+				CF0354312BF203150096509A /* WorkoutModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -215,6 +221,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFBECAF42BB7C1590039139D /* ChatBotView.swift in Sources */,
+				CF0354322BF203150096509A /* WorkoutModel.swift in Sources */,
+				CF0354342BF2076A0096509A /* WorkoutDetailView.swift in Sources */,
 				CFBECAFD2BB7C6270039139D /* ChatBotService.swift in Sources */,
 				CF0833972BB776CD00380813 /* ContentView.swift in Sources */,
 				CF96E43B2BB7D2AA00F63E04 /* ChatResponseModel.swift in Sources */,
